@@ -1,0 +1,11 @@
+# This file is maintained by Chef.  Don't hand edit.  
+domain <%= @domain %>
+
+<% @nameservers.each do |ip| %>
+<%= "nameserver #{ip}" %>
+<% end %>
+
+search <%= @domain %> modcloth.com
+
+# this gives us the ability to use multi-label short names.
+options ndots:2
