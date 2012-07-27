@@ -3,6 +3,6 @@ template "/etc/resolv.conf" do
   mode 0644
   variables(
     :domain => node.default.domain,
-    :nameservers => node[:resolv][:nameservers]
+    :nameservers => node[:resolv][:nameservers].empty? ? '' : node[:resolv][:nameservers]
   )
 end
