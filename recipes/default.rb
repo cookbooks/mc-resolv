@@ -1,6 +1,6 @@
 case node['platform']
 when "debian", "ubuntu"
-  template "/etc/resolvconf/resolv.conf.d/base" do
+  template "/etc/resolvconf/resolv.conf.d/original" do
     source "resolvconf_base.erb"
     mode 0644
     variables(
