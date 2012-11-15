@@ -7,6 +7,11 @@ when "debian", "ubuntu"
       :nameservers => node[:resolv][:nameservers].empty? ? '' : node[:resolv][:nameservers]
     )
   end
+  
+  service "resolvconf" do
+    action :restart
+  end
+  
 when "smartos"
   template "/etc/resolv.conf" do
     source "resolv_conf.erb"
